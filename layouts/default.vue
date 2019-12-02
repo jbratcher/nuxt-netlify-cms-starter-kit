@@ -101,9 +101,24 @@ export default {
           to: '/'
         },
         {
+          icon: 'mdi-toolbox-outline',
+          title: 'Services',
+          to: '/services'
+        },
+        {
           icon: 'mdi-post',
           title: 'Blog',
           to: '/blog'
+        },
+        {
+          icon: 'mdi-account-supervisor',
+          title: 'About',
+          to: '/about'
+        },
+        {
+          icon: 'mdi-email-send',
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       miniVariant: false,

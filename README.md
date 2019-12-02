@@ -1,15 +1,17 @@
-# Nuxt, Vuetify, & Netlify CMS Starter Kit
+# Company Website Template
 
-A simple repo to add Vueity and blog functionality to [Nuxt & Netlify CMS Starter](https://github.com/renestalder/nuxt-netlify-cms-starter-template)
+Easy starter for a company website with a blog.  Built with Nuxt, Vuetify, and Netlify CMS.
 
-A lot of the starter repos for **Nuxt x Netlify CMS** use a module like `nuxtent` or `nuxtdown` to manage flat file content. This project is meant to be a solution for those who don't mind doing a little more configuration to not have to rely on these dependencies.
+Built on top of [Nuxt Netlify CMS Starter Kit](https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
+
+## How to use
 
 1. Clone the repository locally and cd into the directory.
 
 ```bash
-git clone https://github.com/jbratcher/nuxt-netlify-cms-starter-kit
+git clone https://github.com/jbratcher/company_site_template
 
-cd nuxt-netlify-cms-starter
+cd company_site_template
 ```
 
 2. Install dependencies.
@@ -45,7 +47,7 @@ npm run generate
 
 This project comes with Netlify CMS ready to rumble, and a basic blog configuration. To use Netlify CMS:
 
-### 🔏 Authenticating with Netlify Identity
+### Authenticating with Netlify Identity
 
 1. Deploy to Netlify at least once.
 2. Go to **Settings > Identity**, and select **Enable Identity service**.
