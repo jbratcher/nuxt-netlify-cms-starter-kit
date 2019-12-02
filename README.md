@@ -59,6 +59,8 @@ This project comes with Netlify CMS ready to rumble, and a basic blog configurat
 2. Enter the Netlify URL of your site when prompted.
 3. Login with the account you created or one of the external providers, if you enabled them.
 
+#### To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console.
+
 ### Use Netlify CMS Dashboard
 
 1. In your browser, naviage to `localhost:3000/admin`.

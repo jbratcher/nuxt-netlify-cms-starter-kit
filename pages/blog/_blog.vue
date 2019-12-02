@@ -12,9 +12,9 @@
             width="1280"
             max-height="300"
           />
-          <v-card-title class="display-1">{{blogPost.title}}</v-card-title>
-          <v-card-subtitle class="subtitle-1">{{blogPost.description}}</v-card-subtitle>
-          <v-card-text v-html="$md.render(blogPost.body)"></v-card-text>
+          <v-card-title class="display-2 mb-3">{{blogPost.title}}</v-card-title>
+          <v-card-subtitle class="headline">{{blogPost.description}}</v-card-subtitle>
+          <v-card-text class="container" v-html="$md.render(blogPost.body)"></v-card-text>
         </v-card>
       </article>
     </v-col>
