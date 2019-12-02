@@ -1,19 +1,29 @@
 <template>
-  <div>
-    <logo />
-    <h1 class="title">Nuxt.js & Netlify CMS Starter</h1>
-    <h2 class="subtitle">Truly fantastic. Sometimes I astound even myself.</h2>
-    <a href="https://github.com/xdesro/nuxt-netlify-cms-starter">GitHub</a>
-    <a href="http://i.ncredibly.online">Twitter</a>
-    <nuxt-link to="/blog">Blog</nuxt-link>
-    <div class="deploy-button">
-      <a
-        href="https://app.netlify.com/start/deploy?repository=https://github.com/xdesro/nuxt-netlify-cms-starter"
-      >
-        <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
-      </a>
-    </div>
-  </div>
+  <v-layout>
+    <v-flex>
+      <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-12">
+          <h1 class="display-1 pl-12">Hero Section</h1>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-12">
+          <h1 class="display-1 pl-12">Benefits Section</h1>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-12">
+          <h1 class="display-1 pl-12">About Section</h1>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12">
+          <h1 class="display-1 pl-12">Contact Section</h1>
+        </section>
+      </main>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -33,14 +43,15 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss">
+main {
+  .container {
+    min-height: 100vh;
+  }
+
+  & > section:nth-child(odd) {
+    background-color: #eee;
+  }
 }
 
 .title {

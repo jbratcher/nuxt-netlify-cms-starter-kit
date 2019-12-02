@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-netlify-cms-starter",
+  "name": "nuxt-netlify-cms-starter-kit",
   "version": "1.0.0",
-  "description": "A very Spartan boilerplate for using Netlify CMS/static content files with Nuxt.js.",
-  "author": "Henry Desroches <yo@henry.codes> (https://henry.codes)",
+  "description": "Nuxt, Vuetify, Netlify CMS Starter Kit",
+  "author": "Jeremy Bratcher",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xdesro/nuxt-netlify-cms-starter#readme"
+    "url": "https://github.com/jbratcher/nuxt-netlify-cms-starter-kit#readme"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,6 +20,7 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.9.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4"
