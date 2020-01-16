@@ -2,10 +2,10 @@
   <v-layout>
     <v-flex>
       <main>
-        <v-sheet class="ma-0" color="primary lighten-2" dark tile>
+        <v-sheet class="ma-0" color="primary" dark tile>
           <h1 class="headline pa-2" display="headline">Blog ></h1>
         </v-sheet>
-        <v-list>
+        <v-list class="py-12">
           <v-list-item three-line v-for="(blogPost, index) in blogPosts" :key="index">
             <v-card class="d-flex flex-column">
               <v-img

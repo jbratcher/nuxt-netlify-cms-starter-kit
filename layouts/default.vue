@@ -1,58 +1,31 @@
 <template>
   <v-app>
     <!-- Header Area -->
-    <v-app-bar
-      app
-      color="primary"
-      dark
-      elevate-on-scroll
-      fixed
-      hide-on-scroll
-      scroll-threshold="100"
-      prominent
-      height="70px"
-    >
-      <v-toolbar-title class="headline align-self-center" v-text="title" />
+    <v-app-bar app elevate-on-scroll height="100px" fixed flat light tile>
+      <v-toolbar-title>BrandLogo</v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
-      <MenuLinks
-        :general-links="generalLinks"
-        list-class="row hidden-md-and-down"
-        list-item-class="row-menu"
-      />
+      <MenuLinks :general-links="generalLinks" list-class="row hidden-md-and-down" />
     </v-app-bar>
     <!-- side/mobile navigation -->
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      class="primary"
-      fixed
-      dark
-      app
-      right
-    >
-      <MenuLinks :general-links="generalLinks" list-class="listClass" list-item-class="column" />
+    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed right>
+      <MenuLinks :general-links="generalLinks" list-class="mobile" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
     <v-content>
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer color="primary" class="pa-0">
-      <v-row justify="center" no-gutters>
-        <v-btn
-          v-for="(link, i) in footerLinks"
-          :key="i + link.title"
-          color="white"
-          text
-          rounded
-          class="my-2"
-        >{{ link.title }}</v-btn>
-        <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
-          {{ new Date().getFullYear() }} —
-          <strong>Green Spaces</strong>
-        </v-col>
-      </v-row>
+    <v-footer>
+      <ul>
+        <li v-for="(link, i) in footerLinks" :key="i + link.title">
+          <v-btn text rounded>{{ link.title }}</v-btn>
+        </li>
+      </ul>
+      <v-container>
+        {{ new Date().getFullYear() }} —
+        <strong>{{title}}</strong>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
@@ -96,18 +69,16 @@ export default {
       ],
       generalLinks: [
         {
-          icon: 'mdi-apps',
           title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-post',
           title: 'Blog',
           to: '/blog'
         }
       ],
       miniVariant: false,
-      title: 'Nuxt Netlify CMS'
+      title: 'DirectionTheme'
     }
   }
 }
@@ -123,8 +94,7 @@ export default {
 }
 
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -136,53 +106,62 @@ html {
 
 html,
 body {
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-.v-application a {
-  color: #fff !important;
+// nav
+
+.v-toolbar__title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-left: 2rem;
 }
 
-.v-list-item.row-menu {
-  flex: 1 1 0;
+.v-list {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+
+  .v-list-item {
+    flex: 0;
+    margin: 0 0.5rem;
+    padding: 0 1.5rem;
+
+    .v-list-item__title {
+      font-size: 1.33rem;
+      font-weight: 400;
+    }
+  }
 }
 
 .v-card__title {
   word-break: break-word;
 }
 
-.text-shadow {
-  text-shadow: 2px 2px 4px #000;
-}
-
-.box-shadow-1 {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-}
-
-.theme--dark.v-sheet {
-  background-color: transparent;
-}
-
-.btn-box-shadow-primary {
-  box-shadow: 0 0 8px rgba(0, 121, 107, 0.8);
-
-  &:hover {
-    box-shadow: none;
-    transition: all 0.5s ease;
-  }
-}
-
-.btn-box-shadow-secondary {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-
-  &:hover {
-    box-shadow: none;
-    transition: all 0.5s ease;
-  }
-}
-
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;
+}
+
+// footer
+
+.v-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1rem 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
 }
 </style>
