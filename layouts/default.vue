@@ -78,7 +78,7 @@ export default {
         }
       ],
       miniVariant: false,
-      title: 'DirectionTheme'
+      title: 'Nuxt Netfliy CMS Stater Kit'
     }
   }
 }
