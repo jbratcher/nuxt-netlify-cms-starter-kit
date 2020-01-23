@@ -1,6 +1,6 @@
 # Nuxt, Vuetify, & Netlify CMS Starter
 
-Built on top of [Nuxt Netlify CMS Starter Kit](https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
+Built on top of [Nuxt Netlify CMS Starter](https://github.com/xdesro/nuxt-netlify-cms-starter)
 
 ## How to use
 
@@ -8,14 +8,14 @@ Built on top of [Nuxt Netlify CMS Starter Kit](https://github.com/jbratcher/nuxt
 
 The quickest way to get started is with Netlify's hyper-convenient **one-click Deploy To Netlify**, which will automatically create an instance of this project on your GitHub account and deploy it instantly to Netlify.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/xdesro/nuxt-netlify-cms-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
 
 Otherwise, you can follow these steps!
 
 1. Clone the repository locally and cd into the directory.
 
 ```bash
-git clone https://github.com/xdesro/nuxt-netlify-cms-starter
+git clone https://github.com/jbratcher/nuxt-netlify-cms-starter-kit
 
 cd nuxt-netlify-cms-starter
 ```
@@ -69,6 +69,8 @@ This project comes with Netlify CMS ready to rumble, and a basic blog configurat
 
 #### To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console.
 
-### Use Netlify CMS Dashboard
+### Netlify CMS Dashboard
 
-Feel free to reach out [on Twitter](https://twitter.com/xdesro). Friendly feedback and advice is always welcome. Contributions doubly so.
+1. In your browser, navigate to `localhost:3000/admin`.
+2. Login 
+3. From the dashboard, you can create, edit, and delete resources and resource types.
