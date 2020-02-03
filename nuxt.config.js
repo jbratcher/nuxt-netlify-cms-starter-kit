@@ -100,6 +100,9 @@ export default {
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
+   **
+   ** define additional themes
+   ** colors object https://vuetifyjs.com/en/styles/colors
    */
   vuetify: {
     theme: {
