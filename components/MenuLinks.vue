@@ -46,10 +46,6 @@ export default {
 </script>
 
 <style lang="scss">
-.row {
-  justify-content: flex-end;
-}
-
 .mobile {
   display: flex;
   flex-direction: column;

@@ -1,11 +1,20 @@
 <template>
   <v-app>
     <!-- Header Area -->
-    <v-app-bar app elevate-on-scroll height="100px" fixed flat light tile>
-      <v-toolbar-title>BrandLogo</v-toolbar-title>
+    <v-app-bar
+      app
+      elevate-on-scroll
+      flat
+      :height="navHeight"
+      hide-on-scroll
+      light
+      scroll-threshold="200"
+      tile
+    >
+      <v-toolbar-title>{{ appTitle.substring(0,10) + "..." }}</v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
-      <MenuLinks :general-links="generalLinks" list-class="row hidden-md-and-down" />
+      <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
     </v-app-bar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed right>
@@ -16,15 +25,17 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer>
+    <v-footer class="py-6">
+      <h2>{{ appTitle }}</h2>
+      <p>{{ appDescription }}</p>
       <ul>
         <li v-for="(link, i) in footerLinks" :key="i + link.title">
           <v-btn text rounded>{{ link.title }}</v-btn>
         </li>
       </ul>
       <v-container>
-        {{ new Date().getFullYear() }} —
-        <strong>{{title}}</strong>
+        {{ new Date().getFullYear() }}&nbsp;-&nbsp;
+        <strong>{{ appTitle }}</strong>
       </v-container>
     </v-footer>
   </v-app>
@@ -39,8 +50,10 @@ export default {
   },
   data() {
     return {
+      appTitle: process.env.title,
+      appDescription: process.env.description,
       drawer: false,
-      fixed: false,
+      // add footer links here
       footerLinks: [
         {
           title: 'Home',
@@ -60,31 +73,36 @@ export default {
         },
         {
           title: 'Blog',
-          to: '/'
+          to: '/blog'
         },
         {
           title: 'Contact Us',
           to: '/'
         }
       ],
+      // add main nav links here
+      // material design icons https://materialdesignicons.com/
       generalLinks: [
         {
+          icon: 'mdi-home',
           title: 'Home',
           to: '/'
         },
         {
+          icon: 'mdi-post',
           title: 'Blog',
           to: '/blog'
         }
       ],
-      miniVariant: false,
-      title: 'Nuxt Netfliy CMS Stater Kit'
+      miniVariant: false
     }
   }
 }
 </script>
 
 <style lang="scss">
+// global
+
 *,
 *:before,
 *:after {
@@ -110,38 +128,36 @@ body {
   overflow-x: hidden;
 }
 
-// nav
-
-.v-toolbar__title {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-left: 2rem;
-}
-
-.v-list {
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-
-  .v-list-item {
-    flex: 0;
-    margin: 0 0.5rem;
-    padding: 0 1.5rem;
-
-    .v-list-item__title {
-      font-size: 1.33rem;
-      font-weight: 400;
-    }
-  }
-}
-
 .v-card__title {
   word-break: break-word;
 }
 
-.justify-space-evenly {
-  justify-content: space-around;
-  justify-content: space-evenly;
+// main nav
+
+.v-toolbar__content {
+  .v-toolbar__title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-left: 2rem;
+  }
+
+  .v-list {
+    background: none;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+
+    .v-list-item {
+      flex: 0;
+      margin: 0 0.5rem;
+      padding: 0 1.5rem;
+
+      .v-list-item__title {
+        font-size: 1.33rem;
+        font-weight: 400;
+      }
+    }
+  }
 }
 
 // footer
@@ -164,4 +180,6 @@ body {
     padding: 1rem 0;
   }
 }
+
+// global styles shared among pages can go here
 </style>

@@ -1,10 +1,18 @@
 import colors from 'vuetify/es5/util/colors'
+import * as strUtil from './utils/str-utils.js'
+
+// format package name for title display
+const title = strUtil.titleCase(process.env.npm_package_name.replace(/-/g, " "));
 
 export default {
   mode: 'universal',
   /*
-   ** Headers of the page
+   ** env variables used in vue components
    */
+  env: {
+    title: title || '',
+    description: process.env.npm_package_description || '',
+  },
   /*
    ** Headers of the page
    */
@@ -12,7 +20,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    title: 'Nuxt Netlify CMS Starter',
+    title: title || '',
     meta: [{
         charset: 'utf-8'
       },
