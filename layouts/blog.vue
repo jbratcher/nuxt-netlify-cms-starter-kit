@@ -3,8 +3,7 @@
     <!-- Header Area -->
     <v-app-bar
       app
-      color="transparent"
-      dark
+      light
       elevate-on-scroll
       :height="navHeight"
       hide-on-scroll
@@ -18,18 +17,11 @@
       <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
     </v-app-bar>
     <!-- side/mobile navigation -->
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      color="rgba(0,0,0,0.8)"
-      dark
-      fixed
-      right
-    >
+    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed right>
       <MenuLinks :general-links="generalLinks" list-class="mobile" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
-    <v-content class="pa-0">
+    <v-content>
       <nuxt />
     </v-content>
     <!-- Footer Area -->

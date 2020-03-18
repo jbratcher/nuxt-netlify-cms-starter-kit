@@ -3,9 +3,27 @@
     <v-flex>
       <main>
         <!-- Hero Section -->
-        <section id="hero" class="py-12">
-          <h1 class="display-1 pl-12">Hero Section</h1>
-        </section>
+        <v-container
+          id="hero"
+          class="d-flex flex-column align-center justify-center pa-0 white--text"
+          fluid
+        >
+          <v-parallax
+            dark
+            src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+            lazy-src="https://picsum.photos/id/0/10/6"
+          >
+            <v-row align="center" justify="center">
+              <v-col class="text-center" cols="12">
+                <h1 class="display-1 mb-2">Nuxt Netlify CMS Starter Kit</h1>
+                <p
+                  class="headline mb-12"
+                >Quickly spin up a static site using Nuxt with Netlify CMS. Push to deploy on Netlify.</p>
+                <v-btn dark outlined>Get Started</v-btn>
+              </v-col>
+            </v-row>
+          </v-parallax>
+        </v-container>
 
         <!-- Benefits Section -->
         <section id="benefits" class="py-12">
@@ -39,38 +57,9 @@ export default {
 </script>
 
 <style lang="scss">
-main {
-  .container {
-    min-height: 100vh;
+#hero {
+  .v-parallax {
+    width: 100vw;
   }
-
-  & > section:nth-child(odd) {
-    background-color: #eee;
-  }
-}
-
-.title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: bold;
-  font-size: 3.2rem;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 2rem;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-a {
-  font-weight: bold;
-  color: #526488;
-}
-.deploy-button {
-  margin-top: 1rem;
 }
 </style>

@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex>
       <main>
-        <v-sheet class="ma-0" color="primary" dark tile>
+        <v-sheet color="primary" dark tile>
           <h1 class="headline pa-2" display="headline">Blog ></h1>
         </v-sheet>
         <v-list class="py-12">
@@ -32,6 +32,7 @@
 </template>
 <script>
 export default {
+  layout: 'blog',
   computed: {
     blogPosts() {
       return this.$store.state.blogPosts
