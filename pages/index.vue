@@ -15,16 +15,16 @@
           <v-row align="center" justify="center">
             <v-col class="text-center px-6" cols="12">
               <h1
-                :class="{'display-2 mb-6': $vuetify.breakpoint.mdAndUp, 'display-1 mb-2': $vuetify.breakpoint.smAndDown}"
+                :class="{'display-2 mb-6': $breakpoint.mdAndUp, 'display-1 mb-2': $breakpoint.smAndDown}"
               >Nuxt Netlify CMS Starter Kit</h1>
               <p
-                :class="{'headline mb-12': $vuetify.breakpoint.mdAndUp, 'subtitle-1 mb-12': $vuetify.breakpoint.smAndDown}"
+                :class="{'headline mb-12': $breakpoint.mdAndUp, 'subtitle-1 mb-12': $breakpoint.smAndDown}"
               >Quickly spin up a static site using Nuxt with Netlify CMS. Push to deploy on Netlify.</p>
               <v-btn
                 dark
                 outlined
-                :x-large="$vuetify.breakpoint.mdAndUp"
-                :large="$vuetify.breakpoint.smAndDown"
+                :x-large="$breakpoint.mdAndUp"
+                :large="$breakpoint.smAndDown"
               >Get Started</v-btn>
             </v-col>
           </v-row>

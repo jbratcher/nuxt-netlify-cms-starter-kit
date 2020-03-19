@@ -12,7 +12,9 @@
       shrink-on-scroll
       tile
     >
-      <v-toolbar-title class="align-self-center pb-0">{{ appTitle }}</v-toolbar-title>
+      <v-toolbar-title
+        :class="{'align-self-center pl-5 pb-0': $breakpoint.mdAndUp, 'align-self-center pl-0 pb-0': $breakpoint.smAndDown }"
+      >{{ appTitle }}</v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" x-large />
       <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
@@ -35,10 +37,10 @@
     <!-- Footer Area -->
     <v-footer class="d-flex flex-column align-center py-6">
       <h2
-        :class="{'display-1 mb-3': $vuetify.breakpoint.mdAndUp, 'headline mb-3': $vuetify.breakpoint.smAndDown}"
+        :class="{'display-1 mb-3': $breakpoint.mdAndUp, 'headline mb-3': $breakpoint.smAndDown}"
       >{{ appTitle }}</h2>
       <p
-        :class="{'headline': $vuetify.breakpoint.mdAndUp, 'subtitle-1': $vuetify.breakpoint.smAndDown}"
+        :class="{'headline': $breakpoint.mdAndUp, 'subtitle-1': $breakpoint.smAndDown}"
       >{{ appDescription }}</p>
       <nav>
         <ul class="d-flex flex-wrap py-3">
@@ -121,7 +123,7 @@ export default {
     },
     navHeight() {
       let height = '100px'
-      switch (this.$vuetify.breakpoint.name) {
+      switch (this.$breakpoint.name) {
         case 'xs':
           height = '80px'
           break
@@ -182,6 +184,7 @@ body {
 .v-toolbar--prominent {
   .v-toolbar__content {
     align-items: center;
+    padding: 0.25rem 0.75rem;
   }
 }
 

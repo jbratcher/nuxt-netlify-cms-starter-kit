@@ -3,7 +3,7 @@
     <v-col class="pa-0">
       <v-sheet color="primary" dark tile>
         <h1
-          :class="{'headline pl-6 py-2': $vuetify.breakpoint.mdAndUp, 'title pl-6 py-2': $vuetify.breakpoint.smAndDown}"
+          :class="{'headline pl-6 py-2': $breakpoint.mdAndUp, 'title pl-6 py-2': $breakpoint.smAndDown}"
         >Blog ></h1>
       </v-sheet>
       <v-container>
@@ -13,7 +13,7 @@
             :key="index"
             cols="12"
             sm="6"
-            :class="{'px-9': $vuetify.breakpoint.smAndDown}"
+            :class="{'px-9': $breakpoint.smAndDown}"
           >
             <v-card height="100%">
               <v-img
@@ -22,10 +22,10 @@
                 max-height="200px"
               />
               <v-card-title
-                :class="{'display-1': $vuetify.breakpoint.mdAndUp, 'headline': $vuetify.breakpoint.smAndDown}"
+                :class="{'display-1': $breakpoint.mdAndUp, 'headline': $breakpoint.smAndDown}"
               >{{blogPost.title.substring(0, 70)}}</v-card-title>
               <v-card-subtitle
-                :class="{'subtitle-1': $vuetify.breakpoint.mdAndUp, 'body-2': $vuetify.breakpoint.smAndDown}"
+                :class="{'subtitle-1': $breakpoint.mdAndUp, 'body-2': $breakpoint.smAndDown}"
               >{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
               <v-card-text class="body-1">{{blogPost.body.substring(0, 144) + '...'}}</v-card-text>
               <v-btn
