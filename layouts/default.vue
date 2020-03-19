@@ -33,14 +33,20 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer class="py-6">
-      <h2>{{ appTitle }}</h2>
-      <p>{{ appDescription }}</p>
-      <ul>
-        <li v-for="(link, i) in footerLinks" :key="i + link.title">
-          <v-btn text rounded>{{ link.title }}</v-btn>
-        </li>
-      </ul>
+    <v-footer class="d-flex flex-column align-center py-6">
+      <h2
+        :class="{'display-1 mb-3': $vuetify.breakpoint.mdAndUp, 'headline mb-3': $vuetify.breakpoint.smAndDown}"
+      >{{ appTitle }}</h2>
+      <p
+        :class="{'headline': $vuetify.breakpoint.mdAndUp, 'subtitle-1': $vuetify.breakpoint.smAndDown}"
+      >{{ appDescription }}</p>
+      <nav>
+        <ul class="d-flex flex-wrap py-3">
+          <li v-for="(link, i) in footerLinks" :key="i + link.title">
+            <v-btn text rounded>{{ link.title }}</v-btn>
+          </li>
+        </ul>
+      </nav>
       <v-container>
         {{ new Date().getFullYear() }}&nbsp;-&nbsp;
         <strong>{{ appTitle }}</strong>
@@ -179,50 +185,11 @@ body {
   }
 }
 
-// .v-toolbar__content {
-//   .v-toolbar__title {
-//     font-size: 2rem;
-//     font-weight: 900;
-//     margin-left: 2rem;
-//   }
-
-//   .v-list {
-//     background: none;
-//     display: flex;
-//     align-items: center;
-//     margin-right: 2rem;
-
-//     .v-list-item {
-//       flex: 0;
-//       margin: 0 0.5rem;
-//       padding: 0 1.5rem;
-
-//       .v-list-item__title {
-//         font-size: 1.33rem;
-//         font-weight: 400;
-//       }
-//     }
-//   }
-// }
-
 // footer
 
 .v-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   ul {
-    display: flex;
-    justify-content: center;
     list-style-type: none;
-    padding: 1rem 0;
-  }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
   }
 }
 
