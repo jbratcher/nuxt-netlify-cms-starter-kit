@@ -1,18 +1,17 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list :class="listClass">
+  <v-list :class="`${listClass} py-0`" color="transparent" rounded>
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"
       :key="i + `-${item.title}`"
       :to="item.to"
-      :class="listItemClass"
-      dark
+      :class="`${listItemClass} mb-0`"
       router
       exact
     >
-      <v-list-item-action>
+      <v-list-item-action v-if="item.icon" class="mr-2">
         <v-icon>{{ item.icon }}</v-icon>
       </v-list-item-action>
       <v-list-item-content>
@@ -46,5 +45,27 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0;
+  padding-top: 2rem;
+
+  .v-list-item {
+    margin: 1rem 0;
+    min-width: 12.5rem;
+
+    .v-list-item__title {
+      font-size: 1.67rem;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .v-list {
+    display: flex;
+  }
+}
 </style>

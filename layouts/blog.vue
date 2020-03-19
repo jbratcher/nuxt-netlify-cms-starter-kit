@@ -3,8 +3,7 @@
     <!-- Header Area -->
     <v-app-bar
       app
-      color="transparent"
-      dark
+      light
       elevate-on-scroll
       :height="navHeight"
       hide-on-scroll
@@ -18,35 +17,22 @@
       <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
     </v-app-bar>
     <!-- side/mobile navigation -->
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      color="rgba(0,0,0,0.8)"
-      dark
-      fixed
-      right
-    >
+    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed right>
       <MenuLinks :general-links="generalLinks" list-class="mobile" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
-    <v-content class="pa-0">
+    <v-content>
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer class="d-flex flex-column align-center py-6">
-      <h2
-        :class="{'display-1 mb-3': $vuetify.breakpoint.mdAndUp, 'headline mb-3': $vuetify.breakpoint.smAndDown}"
-      >{{ appTitle }}</h2>
-      <p
-        :class="{'headline': $vuetify.breakpoint.mdAndUp, 'subtitle-1': $vuetify.breakpoint.smAndDown}"
-      >{{ appDescription }}</p>
-      <nav>
-        <ul class="d-flex flex-wrap py-3">
-          <li v-for="(link, i) in footerLinks" :key="i + link.title">
-            <v-btn text rounded>{{ link.title }}</v-btn>
-          </li>
-        </ul>
-      </nav>
+    <v-footer class="py-6">
+      <h2>{{ appTitle }}</h2>
+      <p>{{ appDescription }}</p>
+      <ul>
+        <li v-for="(link, i) in footerLinks" :key="i + link.title">
+          <v-btn text rounded>{{ link.title }}</v-btn>
+        </li>
+      </ul>
       <v-container>
         {{ new Date().getFullYear() }}&nbsp;-&nbsp;
         <strong>{{ appTitle }}</strong>
@@ -185,11 +171,50 @@ body {
   }
 }
 
+// .v-toolbar__content {
+//   .v-toolbar__title {
+//     font-size: 2rem;
+//     font-weight: 900;
+//     margin-left: 2rem;
+//   }
+
+//   .v-list {
+//     background: none;
+//     display: flex;
+//     align-items: center;
+//     margin-right: 2rem;
+
+//     .v-list-item {
+//       flex: 0;
+//       margin: 0 0.5rem;
+//       padding: 0 1.5rem;
+
+//       .v-list-item__title {
+//         font-size: 1.33rem;
+//         font-weight: 400;
+//       }
+//     }
+//   }
+// }
+
 // footer
 
 .v-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   ul {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
+    padding: 1rem 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
   }
 }
 

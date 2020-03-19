@@ -1,11 +1,11 @@
 <template>
-  <v-layout>
-    <v-col>
-      <v-sheet class="ma-0" color="primary lighten-2" dark tile>
-        <h1 class="headline pa-2" display="headline">Blog > {{ blogPost.title }}</h1>
+  <v-row>
+    <v-col class="pa-0">
+      <v-sheet class="ma-0" color="primary" dark tile>
+        <h1 class="headline pl-6 py-2">Blog > {{ blogPost.title }}</h1>
       </v-sheet>
       <article>
-        <v-card class="d-flex flex-column align-center mx-auto">
+        <v-card class="d-flex flex-column align-center mx-auto" tile>
           <v-img
             src="https://picsum.photos/1280/920"
             lazy-src="https://picsum.photos/1280/920"
@@ -18,10 +18,11 @@
         </v-card>
       </article>
     </v-col>
-  </v-layout>
+  </v-row>
 </template>
 <script>
 export default {
+  layout: 'blog',
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload }
     else
@@ -32,8 +33,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.col {
-  margin: 0;
-  padding: 0;
-}
 </style>
