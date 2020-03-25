@@ -149,25 +149,23 @@ export default {
   padding: 0;
 }
 
-html {
+html,
+body,
+.v-application {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
   box-sizing: border-box;
-}
-
-html,
-body {
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-.v-card__title {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   word-break: break-word;
+  word-spacing: 1px;
 }
 
 // main nav
@@ -189,4 +187,26 @@ body {
 }
 
 // global styles shared among pages can go here
+
+.v-application {
+  .v-card__title,
+  .v-card__subtitle,
+  .v-card__text {
+    word-break: keep-all;
+  }
+
+  article > * + * {
+    margin-top: 1em;
+  }
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
