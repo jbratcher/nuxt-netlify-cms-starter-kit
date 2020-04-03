@@ -48,6 +48,18 @@
 <script>
 export default {
   layout: 'blog',
+  head() {
+    return {
+      title: `Blog | Nuxt Netlify CMS Starter Kit`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `A blog using Nuxt and Netlify CMS`
+        }
+      ]
+    }
+  },
   computed: {
     blogPosts() {
       return this.$store.state.blogPosts

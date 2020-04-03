@@ -39,6 +39,19 @@
 <script>
 export default {
   layout: 'blog',
+  head() {
+    let blogPost = this.blogPost
+    return {
+      title: `${blogPost.title} | Nuxt Netlify CMS Starter Kit`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${blogPost.description}`
+        }
+      ]
+    }
+  },
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload }
     else

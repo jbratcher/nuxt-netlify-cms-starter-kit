@@ -32,8 +32,8 @@
           </v-parallax>
         </v-container>
 
-        <!-- Section -->
-        <v-container class="py-12">
+        <!-- About Section -->
+        <v-container id="about" class="py-12">
           <v-row align="center" justify="center">
             <v-col cols="12">
               <h2
@@ -73,6 +73,7 @@
             </v-col>
           </v-row>
         </v-container>
+        <!-- End Main -->
       </v-col>
     </v-row>
   </v-container>
@@ -80,7 +81,22 @@
 
 <script>
 export default {
-  data: function() {
+  head() {
+    return {
+      title: `Blog | Nuxt Netlify CMS Starter Kit`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `A blog using Nuxt and Netflify CMS`
+        }
+      ],
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+      ]
+    }
+  },
+  data() {
     return {
       cards: [
         {
@@ -104,13 +120,6 @@ export default {
             'Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content.',
           link: 'https://www.netlifycms.org/'
         }
-      ]
-    }
-  },
-  head() {
-    return {
-      script: [
-        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
       ]
     }
   }
