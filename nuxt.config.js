@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 import * as strUtil from './utils/str-utils.js'
 
 // format package name for title display
-const title = strUtil.titleCase(process.env.npm_package_name.replace(/-/g, " "));
+const title = strUtil.titleCase(process.env.npm_package_name.replace(/-/g, ' '))
 
 export default {
   mode: 'universal',
@@ -11,17 +11,18 @@ export default {
    */
   env: {
     title: title || '',
-    description: process.env.npm_package_description || '',
+    description: process.env.npm_package_description || ''
   },
   /*
    ** Headers of the page
    */
   head: {
     htmlAttrs: {
-      lang: 'en',
+      lang: 'en'
     },
     title: title || '',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -34,23 +35,26 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{
+    link: [
+      {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
       {
-        rel: 'stylesheet',
+        rel: 'preload',
         href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap',
+        as: 'stylesheet'
       },
       {
-        rel: 'stylesheet',
+        rel: 'preload',
         href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
-      },
+        as: 'stylesheet'
+      }
     ]
   },
   generate: {
-    routes: function () {
+    routes: function() {
       const fs = require('fs')
       return fs.readdirSync('./assets/content/blog').map(file => {
         return {
@@ -73,7 +77,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/breakpoint"],
+  plugins: ['~/plugins/breakpoint'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -81,10 +85,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/markdownit',
-    '@nuxtjs/vuetify',
-  ],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/vuetify'],
   markdownit: {
     injected: true
   },
@@ -105,6 +106,8 @@ export default {
    ** colors object https://vuetifyjs.com/en/styles/colors
    */
   vuetify: {
+    treeShake: true,
+    customVariables: ['~/assets/variables.scss'],
     theme: {
       light: true,
       themes: {
@@ -116,9 +119,9 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: colors.blue.base,
+          background: colors.blue.base
         }
       }
     }
-  },
+  }
 }

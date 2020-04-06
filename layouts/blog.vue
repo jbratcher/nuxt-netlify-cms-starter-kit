@@ -12,14 +12,30 @@
       tile
     >
       <v-toolbar-title
-        :class="{'align-self-center pl-5 pb-0': $breakpoint.mdAndUp, 'align-self-center pl-0 pb-0': $breakpoint.smAndDown }"
-      >{{ appTitle }}</v-toolbar-title>
+        :class="{
+          'align-self-center pl-5 pb-0': $breakpoint.mdAndUp,
+          'align-self-center pl-0 pb-0': $breakpoint.smAndDown
+        }"
+        >{{ appTitle }}</v-toolbar-title
+      >
       <v-spacer />
-      <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" x-large />
-      <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
+      <v-app-bar-nav-icon
+        class="hidden-md-and-up"
+        @click.stop="drawer = !drawer"
+        x-large
+      />
+      <MenuLinks
+        :general-links="generalLinks"
+        list-class="hidden-sm-and-down"
+      />
     </v-app-bar>
     <!-- side/mobile navigation -->
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed right>
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      fixed
+      right
+    >
       <MenuLinks :general-links="generalLinks" list-class="mobile" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
@@ -29,15 +45,25 @@
     <!-- Footer Area -->
     <v-footer class="d-flex flex-column align-center py-6">
       <h2
-        :class="{'display-1 mb-3': $breakpoint.mdAndUp, 'headline mb-3': $breakpoint.smAndDown}"
-      >{{ appTitle }}</h2>
+        :class="{
+          'display-1 mb-3': $breakpoint.mdAndUp,
+          'headline mb-3': $breakpoint.smAndDown
+        }"
+      >
+        {{ appTitle }}
+      </h2>
       <p
-        :class="{'headline': $breakpoint.mdAndUp, 'subtitle-1': $breakpoint.smAndDown}"
-      >{{ appDescription }}</p>
+        :class="{
+          headline: $breakpoint.mdAndUp,
+          'subtitle-1': $breakpoint.smAndDown
+        }"
+      >
+        {{ appDescription }}
+      </p>
       <nav>
         <ul class="d-flex flex-wrap py-3">
           <li v-for="(link, i) in footerLinks" :key="i + link.title">
-            <v-btn text rounded>{{ link.title }}</v-btn>
+            <v-btn :name="link.title" text rounded>{{ link.title }}</v-btn>
           </li>
         </ul>
       </nav>

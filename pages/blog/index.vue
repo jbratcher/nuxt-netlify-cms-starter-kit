@@ -3,8 +3,13 @@
     <v-col class="pa-0">
       <v-sheet color="primary darken-2" dark tile>
         <h1
-          :class="{'headline pl-6 py-2': $breakpoint.mdAndUp, 'title pl-6 py-2': $breakpoint.smAndDown}"
-        >Blog ></h1>
+          :class="{
+            'headline pl-6 py-2': $breakpoint.mdAndUp,
+            'title pl-6 py-2': $breakpoint.smAndDown
+          }"
+        >
+          Blog >
+        </h1>
       </v-sheet>
       <v-container>
         <v-row>
@@ -13,7 +18,7 @@
             :key="index"
             cols="12"
             sm="6"
-            :class="{'px-9': $breakpoint.smAndDown}"
+            :class="{ 'px-9': $breakpoint.smAndDown }"
           >
             <v-card class="d-flex flex-column" height="100%">
               <v-img
@@ -22,22 +27,32 @@
                 max-height="200px"
               />
               <v-card-title
-                :class="{'display-1': $breakpoint.mdAndUp, 'headline': $breakpoint.smAndDown}"
-              >{{blogPost.title.substring(0, 70)}}</v-card-title>
+                :class="{
+                  'display-1': $breakpoint.mdAndUp,
+                  headline: $breakpoint.smAndDown
+                }"
+                >{{ blogPost.title.substring(0, 70) }}</v-card-title
+              >
               <v-card-subtitle
-                :class="{'subtitle-1': $breakpoint.mdAndUp, 'body-2': $breakpoint.smAndDown}"
-              >{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
+                :class="{
+                  'subtitle-1': $breakpoint.mdAndUp,
+                  'body-2': $breakpoint.smAndDown
+                }"
+                >{{ blogPost.description.substring(0, 80) }}</v-card-subtitle
+              >
               <v-card-text
                 class="body-1"
                 v-html="$md.render(blogPost.body).substring(0, 144) + '...'"
               ></v-card-text>
               <v-btn
                 class="mt-auto ml-3 mb-12"
-                max-width="120px"
                 color="primary"
+                :name="blogPost.title"
                 nuxt
+                max-width="120px"
                 :to="`blog/${blogPost.slug}`"
-              >Read more...</v-btn>
+                >Read more...</v-btn
+              >
             </v-card>
           </v-col>
         </v-row>
@@ -67,5 +82,4 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>
