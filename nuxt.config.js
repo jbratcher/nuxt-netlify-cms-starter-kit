@@ -43,11 +43,6 @@ export default {
       },
       {
         rel: 'preload',
-        href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap',
-        as: 'stylesheet'
-      },
-      {
-        rel: 'preload',
         href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
         as: 'stylesheet'
       }
@@ -85,7 +80,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', '@nuxtjs/vuetify'],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/vuetify', 'nuxt-webfontloader'],
   markdownit: {
     injected: true
   },
@@ -97,6 +92,16 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  /*
+  // nuxt-webfontloader
+  // handles efficient loading of web fonts
+  */
+  webfontloader: {
+    google: {
+      // Loads Open Sans font with weights 300 and 400 + display font as swap
+      families: ['Poppins&display=swap']
+    }
   },
   /*
    ** vuetify module configuration

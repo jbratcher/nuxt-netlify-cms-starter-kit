@@ -34,7 +34,7 @@
                 </p>
                 <v-btn
                   dark
-                  :name="getstarted"
+                  name="getstarted"
                   outlined
                   :x-large="$breakpoint.mdAndUp"
                   :large="$breakpoint.smAndDown"
