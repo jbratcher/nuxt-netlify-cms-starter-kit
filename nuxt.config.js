@@ -43,6 +43,12 @@ export default {
       },
       {
         rel: 'preload',
+        href:
+          'https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css',
+        as: 'stylesheet'
+      },
+      {
+        rel: 'preload',
         href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
         as: 'stylesheet'
       }
@@ -114,6 +120,16 @@ export default {
     treeShake: true,
     customVariables: ['~/assets/variables.scss'],
     theme: {
+      defaultAssets: {
+        icons: false
+      },
+      options: {
+        minifyTheme: function(css) {
+          return process.env.NODE_ENV === 'production'
+            ? css.replace(/[\r\n|\r|\n]/g, '')
+            : css
+        }
+      },
       light: true,
       themes: {
         light: {
