@@ -178,10 +178,17 @@ export default {
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins');
+  font-display: swap;
+}
+
 html,
 body,
 .v-application {
-  font-display: swap;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
