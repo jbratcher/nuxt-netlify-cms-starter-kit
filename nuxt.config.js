@@ -44,13 +44,13 @@ export default {
       {
         rel: 'preload',
         href:
-          'https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css',
-        as: 'stylesheet'
+          'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
+        as: 'style'
       },
       {
         rel: 'preload',
         href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
-        as: 'stylesheet'
+        as: 'style'
       }
     ]
   },
@@ -78,15 +78,15 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/breakpoint'],
+  plugins: ['~/plugins/breakpoint', '~/plugins/vuetify-theme-cache'],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/vuetify'],
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', '@nuxtjs/vuetify', 'nuxt-webfontloader'],
+  modules: ['@nuxtjs/markdownit', 'nuxt-webfontloader'],
   markdownit: {
     injected: true
   },
@@ -119,10 +119,10 @@ export default {
   vuetify: {
     treeShake: true,
     customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      icons: false
+    },
     theme: {
-      defaultAssets: {
-        icons: false
-      },
       options: {
         minifyTheme: function(css) {
           return process.env.NODE_ENV === 'production'
