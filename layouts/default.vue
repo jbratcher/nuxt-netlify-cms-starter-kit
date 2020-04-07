@@ -23,6 +23,7 @@
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click.stop="drawer = !drawer"
+        name="menuopen"
         x-large
       />
       <MenuLinks

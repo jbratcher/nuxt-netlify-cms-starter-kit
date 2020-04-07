@@ -119,9 +119,6 @@ export default {
   vuetify: {
     treeShake: true,
     customVariables: ['~/assets/variables.scss'],
-    defaultAssets: {
-      icons: false
-    },
     theme: {
       options: {
         minifyTheme: function(css) {
