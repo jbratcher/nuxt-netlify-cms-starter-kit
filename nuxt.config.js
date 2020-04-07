@@ -43,12 +43,6 @@ export default {
       },
       {
         rel: 'preload',
-        href:
-          'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
-        as: 'style'
-      },
-      {
-        rel: 'preload',
         href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
         as: 'style'
       }
