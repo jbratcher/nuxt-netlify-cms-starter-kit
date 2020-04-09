@@ -72,7 +72,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/breakpoint', '~/plugins/vuetify-theme-cache'],
+  plugins: [
+    '~/plugins/breakpoint',
+    '~/plugins/directives',
+    '~/plugins/vuetify-theme-cache'
+  ],
   /*
    ** Nuxt.js dev-modules
    */

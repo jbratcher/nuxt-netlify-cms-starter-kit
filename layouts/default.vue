@@ -3,22 +3,23 @@
     <!-- Header Area -->
     <v-app-bar
       app
-      color="transparent"
+      :color="navBelowFold ? 'primary' : 'transparent'"
       dark
       elevate-on-scroll
       :height="navHeight"
       hide-on-scroll
-      scroll-threshold="200"
+      ref="nav"
+      scroll-threshold="250"
       shrink-on-scroll
       tile
+      v-scroll="handleScroll"
     >
       <v-toolbar-title
         :class="{
           'align-self-center pl-5 pb-0': $breakpoint.mdAndUp,
           'align-self-center pl-0 pb-0': $breakpoint.smAndDown
         }"
-        >{{ appTitle }}</v-toolbar-title
-      >
+      >{{ appTitle }}</v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
@@ -26,10 +27,7 @@
         name="menuopen"
         x-large
       />
-      <MenuLinks
-        :general-links="generalLinks"
-        list-class="hidden-sm-and-down"
-      />
+      <MenuLinks :general-links="generalLinks" list-class="d-md-flex hidden-sm-and-down" />
     </v-app-bar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
@@ -53,17 +51,13 @@
           'display-1 mb-3': $breakpoint.mdAndUp,
           'headline mb-3': $breakpoint.smAndDown
         }"
-      >
-        {{ appTitle }}
-      </h2>
+      >{{ appTitle }}</h2>
       <p
         :class="{
           headline: $breakpoint.mdAndUp,
           'subtitle-1': $breakpoint.smAndDown
         }"
-      >
-        {{ appDescription }}
-      </p>
+      >{{ appDescription }}</p>
       <nav>
         <ul class="d-flex flex-wrap py-3">
           <li v-for="(link, i) in footerLinks" :key="i + link.title">
@@ -132,7 +126,8 @@ export default {
           to: '/blog'
         }
       ],
-      miniVariant: false
+      miniVariant: false,
+      navBelowFold: false
     }
   },
   computed: {
@@ -163,6 +158,15 @@ export default {
           break
       }
       return height
+    }
+  },
+  methods: {
+    handleScroll: function(event) {
+      if (window.pageYOffset > 150) {
+        this.navBelowFold = true
+      } else {
+        this.navBelowFold = false
+      }
     }
   }
 }
@@ -207,8 +211,7 @@ body,
 
 // main nav
 
-.v-toolbar,
-.v-toolbar--prominent {
+.v-toolbar.v-toolbar--prominent {
   .v-toolbar__content {
     align-items: center;
     padding: 0.25rem 0.75rem;

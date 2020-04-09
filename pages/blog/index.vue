@@ -1,26 +1,28 @@
 <template>
   <v-row>
     <v-col class="pa-0">
-      <v-sheet color="primary darken-2" dark tile>
-        <h1
-          :class="{
-            'headline pl-6 py-2': $breakpoint.mdAndUp,
-            'title pl-6 py-2': $breakpoint.smAndDown
-          }"
-        >
-          Blog >
-        </h1>
-      </v-sheet>
-      <v-container>
+      <!-- Hero Section -->
+      <TheSplash
+        headerText="Blog"
+        imageSource="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        subText="Thoughts on Nuxt &amp; Netlify CMS"
+      />
+
+      <v-container :class="[$breakpoint.mdAndUp ? 'px-12' : 'px-6']" fluid>
         <v-row>
           <v-col
             v-for="(blogPost, index) in blogPosts"
             :key="index"
+            :class="[$breakpoint.mdAndUp ? '' : 'mb-12']"
             cols="12"
             sm="6"
-            :class="{ 'px-9': $breakpoint.smAndDown }"
           >
-            <v-card class="d-flex flex-column" height="100%">
+            <v-card
+              class="d-flex flex-column"
+              height="100%"
+              :flat="$breakpoint.smAndDown"
+              :tile="$breakpoint.smAndDown"
+            >
               <v-img
                 src="https://picsum.photos/300/240"
                 lazy-src="https://picsum.photos/300/240"
@@ -31,15 +33,13 @@
                   'display-1': $breakpoint.mdAndUp,
                   headline: $breakpoint.smAndDown
                 }"
-                >{{ blogPost.title.substring(0, 70) }}</v-card-title
-              >
+              >{{ blogPost.title.substring(0, 70) }}</v-card-title>
               <v-card-subtitle
                 :class="{
                   'subtitle-1': $breakpoint.mdAndUp,
                   'body-2': $breakpoint.smAndDown
                 }"
-                >{{ blogPost.description.substring(0, 80) }}</v-card-subtitle
-              >
+              >{{ blogPost.description.substring(0, 80) }}</v-card-subtitle>
               <v-card-text
                 class="body-1"
                 v-html="$md.render(blogPost.body).substring(0, 144) + '...'"
@@ -51,8 +51,7 @@
                 nuxt
                 max-width="120px"
                 :to="`blog/${blogPost.slug}`"
-                >Read more...</v-btn
-              >
+              >Read more...</v-btn>
             </v-card>
           </v-col>
         </v-row>
@@ -61,8 +60,12 @@
   </v-row>
 </template>
 <script>
+import TheSplash from '../../components/TheSplash'
 export default {
-  layout: 'blog',
+  components: {
+    TheSplash
+  },
+  layout: 'default',
   head() {
     return {
       title: `Blog | Nuxt Netlify CMS Starter Kit`,

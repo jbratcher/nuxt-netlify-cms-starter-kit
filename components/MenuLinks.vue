@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list :class="`${listClass} py-0`" color="transparent" rounded>
+  <v-list :class="`${listClass}`" color="transparent" rounded>
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"
