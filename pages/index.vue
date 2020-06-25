@@ -6,7 +6,7 @@
         <TheHero
           buttonOutline
           buttonText="Get Started"
-          buttonTo="get-started"
+          buttonTo="about"
           dark
           headerText="Nuxt Netlify CMS Starter Kit"
           imageSource="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
@@ -19,25 +19,34 @@
           <v-row align="center" justify="center">
             <v-col cols="12">
               <h2
-                :class="{
-                  'display-2 text-center mb-6': $breakpoint.mdAndUp,
-                  'display-1 text-center mb-6': $breakpoint.smAndDown
-                }"
-              >About this theme</h2>
+                class="mb-6 text-center"
+                :class="$breakpoint.mdAndUp ? 'display-2' : 'display-1'"
+              >
+                About this theme
+              </h2>
               <h3
-                :class="{
-                  'display-1 text-center mb-6': $breakpoint.mdAndUp,
-                  'headline text-center mb-6': $breakpoint.smAndDown
-                }"
-              >Learn more about this theme</h3>
+                class="mb-6 text-center"
+                :class="$breakpoint.mdAndUp ? 'display-1' : 'headline'"
+              >
+                Learn more about this theme
+              </h3>
               <v-container>
                 <v-row>
-                  <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="4">
-                    <v-hover v-slot:default="{ hover }" close-delay="200" open-delay="200">
+                  <v-col
+                    v-for="(card, index) in cards"
+                    :key="index"
+                    cols="12"
+                    sm="4"
+                  >
+                    <v-hover
+                      v-slot:default="{ hover }"
+                      close-delay="200"
+                      open-delay="200"
+                    >
                       <v-card
                         :class="{
                           'my-6': $breakpoint.mdAndUp,
-                          'white--text primary accent-4 my-6 elevation-24': hover
+                          'white--text primary accent-4 my-6 elevation-24': hover,
                         }"
                         height="100%"
                       >
@@ -49,23 +58,22 @@
                           width="6rem"
                           height="6rem"
                         >
-                          <v-icon :color="hover ? 'white' : 'primary'" size="6rem">{{ card.icon }}</v-icon>
+                          <v-icon
+                            :color="hover ? 'white' : 'primary'"
+                            size="6rem"
+                            >{{ card.icon }}</v-icon
+                          >
                         </v-btn>
                         <v-card-title
-                          :class="{
-                            'headline font-weight-bold pl-6':
-                              $breakpoint.mdAndUp,
-                            'title font-weight-bold pl-6': $breakpoint.smAndDown
-                          }"
-                        >{{ card.title }}</v-card-title>
+                          class="font-weight-bold pl-6"
+                          :class="$breakpoint.mdAndUp ? 'headline' : 'title'"
+                          >{{ card.title }}</v-card-title
+                        >
                         <v-card-title
-                          :class="{
-                            'title font-weight-regular pl-6':
-                              $breakpoint.mdAndUp,
-                            'subtitle-1 font-weight-regular pl-6':
-                              $breakpoint.smAndDown
-                          }"
-                        >{{ card.body }}</v-card-title>
+                          class="font-weight-regular pl-6"
+                          :class="$breakpoint.mdAndUp ? 'title' : 'subtitle-1'"
+                          >{{ card.body }}</v-card-title
+                        >
                       </v-card>
                     </v-hover>
                   </v-col>
@@ -81,10 +89,11 @@
 </template>
 
 <script>
-import TheHero from '../components/TheHero'
+import TheHero from "../components/TheHero";
+import { mdiNuxt, mdiVuetify, mdiWeb } from "@mdi/js";
 export default {
   components: {
-    TheHero
+    TheHero,
   },
   head() {
     return {
@@ -92,47 +101,46 @@ export default {
       meta: [
         {
           hid: `description`,
-          name: 'description',
-          content: `The home page for Nuxt Netlify CMS Starter Kit`
-        }
+          name: "description",
+          content: `The home page for Nuxt Netlify CMS Starter Kit`,
+        },
       ],
       script: [
         {
           defer: true,
-          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
-        }
-      ]
-    }
+          src: "https://identity.netlify.com/v1/netlify-identity-widget.js",
+        },
+      ],
+    };
   },
   data() {
     return {
       cards: [
         {
-          icon: 'mdi-nuxt',
-          title: 'Nuxt',
+          icon: mdiNuxt,
+          title: "Nuxt",
           body:
-            'Supercharger for Vue.js. Enjoy all the benefits of Vue with configuration out of the box. Perfect for SSR, SPAs, or static sites alike. Modular, performant, and enjoyable.',
-          link: 'https://nuxtjs.org/'
+            "Supercharger for Vue.js. Enjoy all the benefits of Vue with configuration out of the box. Perfect for SSR, SPAs, or static sites alike. Modular, performant, and enjoyable.",
+          link: "https://nuxtjs.org/",
         },
         {
-          icon: 'mdi-vuetify',
-          title: 'Card Title',
+          icon: mdiVuetify,
+          title: "Vuetify",
           body:
-            'Vuetify is a Vue UI Library with beautifully handcrafted Material Components. No design skills required — everything you need to create amazing applications is at your fingertips.',
-          link: 'https://vuetifyjs.com/'
+            "Vuetify is a Vue UI Library with beautifully handcrafted Material Components. No design skills required — everything you need to create amazing applications is at your fingertips.",
+          link: "https://vuetifyjs.com/",
         },
         {
-          icon: 'mdi-web',
-          title: 'Netlify CMS',
+          icon: mdiWeb,
+          title: "Netlify CMS",
           body:
-            'Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content.',
-          link: 'https://www.netlifycms.org/'
-        }
-      ]
-    }
-  }
-}
+            "Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content.",
+          link: "https://www.netlifycms.org/",
+        },
+      ],
+    };
+  },
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

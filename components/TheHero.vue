@@ -1,21 +1,26 @@
 <template>
-  <v-container class="d-flex flex-column align-center justify-center pa-0 white--text" fluid>
-    <v-parallax dark :src="imageSource" lazy-src="https://picsum.photos/id/0/10/6">
+  <v-container
+    class="d-flex flex-column align-center justify-center pa-0 white--text"
+    fluid
+  >
+    <v-parallax
+      dark
+      :src="imageSource"
+      lazy-src="https://picsum.photos/id/0/10/6"
+    >
       <v-row align="center" justify="center">
         <v-col class="text-center pt-12 px-6" cols="12">
           <h1
-            :class="{
-              'display-2 mb-12': $breakpoint.mdAndUp,
-              'display-1 mb-2': $breakpoint.smAndDown
-            }"
-          >{{ headerText }}</h1>
+            :class="$breakpoint.mdAndUp ? 'display-1 mb-12' : 'display-1 mb-2'"
+          >
+            {{ headerText }}
+          </h1>
           <p
             class="mb-12"
-            :class="{
-              headline: $breakpoint.mdAndUp,
-              'subtitle-1': $breakpoint.smAndDown
-            }"
-          >{{ subText }}</p>
+            :class="$breakpoint.mdAndUp ? 'title' : 'subtitle-1'"
+          >
+            {{ subText }}
+          </p>
           <v-btn
             :color="buttonColor"
             :dark="dark"
@@ -25,7 +30,8 @@
             :outlined="buttonOutline"
             :x-large="$breakpoint.mdAndUp"
             :large="$breakpoint.smAndDown"
-          >{{ buttonText }}</v-btn>
+            >{{ buttonText }}</v-btn
+          >
         </v-col>
       </v-row>
     </v-parallax>
@@ -34,46 +40,46 @@
 
 <script>
 export default {
-  name: 'TheHero',
+  name: "TheHero",
   props: {
     buttonColor: {
       type: String,
-      default: ''
+      default: "",
     },
     buttonOutline: {
       type: Boolean,
-      default: false
+      default: false,
     },
     buttonText: {
       type: String,
-      default: ''
+      default: "",
     },
     buttonTo: {
       type: String,
-      default: ''
+      default: "",
     },
     dark: {
       type: Boolean,
-      default: true
+      default: true,
     },
     headerText: {
       type: String,
-      default: ''
+      default: "",
     },
     imageSource: {
       type: String,
-      default: ''
+      default: "",
     },
     light: {
       type: Boolean,
-      default: false
+      default: false,
     },
     subText: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: "",
+    },
+  },
+};
 </script>
 
 <style lang="scss">

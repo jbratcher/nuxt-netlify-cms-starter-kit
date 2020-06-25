@@ -15,19 +15,25 @@
       v-scroll="handleScroll"
     >
       <v-toolbar-title
-        :class="{
-          'align-self-center pl-5 pb-0': $breakpoint.mdAndUp,
-          'align-self-center pl-0 pb-0': $breakpoint.smAndDown
-        }"
-      >{{ appTitle }}</v-toolbar-title>
+        class="align-self-center pb-0"
+        :class="$breakpoint.mdAndUp ? 'pl-5' : 'pl-0'"
+        >{{ appTitle }}</v-toolbar-title
+      >
       <v-spacer />
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click.stop="drawer = !drawer"
         name="menuopen"
         x-large
+      >
+        <i aria-hidden="true" class="v-icon notranslate theme--dark">
+          <v-icon>{{ menuIcon }}</v-icon>
+        </i>
+      </v-app-bar-nav-icon>
+      <MenuLinks
+        :general-links="generalLinks"
+        list-class="d-md-flex hidden-sm-and-down"
       />
-      <MenuLinks :general-links="generalLinks" list-class="d-md-flex hidden-sm-and-down" />
     </v-app-bar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
@@ -46,18 +52,17 @@
     </v-content>
     <!-- Footer Area -->
     <v-footer class="d-flex flex-column align-center py-6">
-      <h2
-        :class="{
-          'display-1 mb-3': $breakpoint.mdAndUp,
-          'headline mb-3': $breakpoint.smAndDown
-        }"
-      >{{ appTitle }}</h2>
+      <h2 class="mb-3" :class="$breakpoint.mdAndUp ? 'display-1' : 'headline'">
+        {{ appTitle }}
+      </h2>
       <p
         :class="{
           headline: $breakpoint.mdAndUp,
-          'subtitle-1': $breakpoint.smAndDown
+          'subtitle-1': $breakpoint.smAndDown,
         }"
-      >{{ appDescription }}</p>
+      >
+        {{ appDescription }}
+      </p>
       <nav>
         <ul class="d-flex flex-wrap py-3">
           <li v-for="(link, i) in footerLinks" :key="i + link.title">
@@ -74,11 +79,11 @@
 </template>
 
 <script>
-import MenuLinks from '../components/MenuLinks.vue'
-
+import MenuLinks from "../components/MenuLinks.vue";
+import { mdiHome, mdiMenu, mdiPost } from "@mdi/js";
 export default {
   components: {
-    MenuLinks
+    MenuLinks,
   },
   data() {
     return {
@@ -88,165 +93,73 @@ export default {
       // add footer links here
       footerLinks: [
         {
-          title: 'Home',
-          to: '/'
+          title: "Home",
+          to: "/",
         },
         {
-          title: 'About Us',
-          to: '/'
+          title: "Blog",
+          to: "/blog",
         },
-        {
-          title: 'Team',
-          to: '/'
-        },
-        {
-          title: 'Services',
-          to: '/'
-        },
-        {
-          title: 'Blog',
-          to: '/blog'
-        },
-        {
-          title: 'Contact Us',
-          to: '/'
-        }
       ],
       // add main nav links here
       // material design icons https://materialdesignicons.com/
       generalLinks: [
         {
-          icon: 'mdi-home',
-          title: 'Home',
-          to: '/'
+          icon: mdiHome,
+          title: "Home",
+          to: "/",
         },
         {
-          icon: 'mdi-post',
-          title: 'Blog',
-          to: '/blog'
-        }
+          icon: mdiPost,
+          title: "Blog",
+          to: "/blog",
+        },
       ],
+      menuIcon: mdiMenu,
       miniVariant: false,
-      navBelowFold: false
-    }
+      navBelowFold: false,
+    };
   },
   computed: {
     formattedAppTitle() {
       if (this.appTitle.length > 10) {
-        return this.appTitle.substring(0, 10) + '...'
+        return this.appTitle.substring(0, 10) + "...";
       } else {
-        return this.appTitle
+        return this.appTitle;
       }
     },
     navHeight() {
-      let height = '100px'
+      let height = "80px";
       switch (this.$breakpoint.name) {
-        case 'xs':
-          height = '80px'
-          break
-        case 'sm':
-          height = '90px'
-          break
-        case 'md':
-          height = '100px'
-          break
-        case 'lg':
-          height = '110px'
-          break
-        case 'xl':
-          height = '120px'
-          break
+        case "xs":
+          height = "60px";
+          break;
+        case "sm":
+          height = "70px";
+          break;
+        case "md":
+          height = "80px";
+          break;
+        case "lg":
+          height = "90px";
+          break;
+        case "xl":
+          height = "100px";
+          break;
       }
-      return height
-    }
+      return height;
+    },
   },
   methods: {
     handleScroll: function(event) {
       if (window.pageYOffset > 150) {
-        this.navBelowFold = true
+        this.navBelowFold = true;
       } else {
-        this.navBelowFold = false
+        this.navBelowFold = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-// global
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Poppins');
-  font-display: swap;
-}
-
-html,
-body,
-.v-application {
-  font-size: 16px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  box-sizing: border-box;
-  min-height: 100vh;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  word-break: keep-all;
-  word-spacing: 1px;
-}
-
-// main nav
-
-.v-toolbar.v-toolbar--prominent {
-  .v-toolbar__content {
-    align-items: center;
-    padding: 0.25rem 0.75rem;
-  }
-}
-
-// footer
-
-.v-footer {
-  ul {
-    list-style-type: none;
-  }
-}
-
-// global styles shared among pages can go here
-
-.v-application {
-  .v-card__title,
-  .v-card__subtitle,
-  .v-card__text {
-    word-break: keep-all;
-  }
-
-  article > * + * {
-    margin-top: 1rem;
-  }
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-</style>
+<style lang="scss"></style>

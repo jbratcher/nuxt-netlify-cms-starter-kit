@@ -6,16 +6,30 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'assets/content/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "assets/content/blog"
     create: true
-    format: 'json'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    format: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        default:
+        media_library:
+          config:
+            multiple: true
+      - label: "Hero"
+        name: "hero"
+        widget: "image"
+        default:
+        media_library:
+          config:
+            multiple: true

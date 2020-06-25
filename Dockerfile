@@ -23,3 +23,5 @@ CMD ["nginx", "-g", "daemon off;"]
 ###
 ### Serve command
 ### docker run --name basic_nuxt --rm -d -p 3333:80 nuxt:nginx
+### 
+### This will serve the app on localhost:3333

@@ -1,23 +1,58 @@
-# Nuxt, Vuetify, & Netlify CMS Starter
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/8gc22na.png" alt="Project logo"></a>
+</p>
+
+<h3 align="center">Nuxt Netlify CMS Starter</h3>
+
+<div align="center">
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/jbratcher/nuxt-netlify-cms-starter-kit.svg)](https://github.com/jbratcher/nuxt-netlify-cms-starter-kit/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/jbratcher/nuxt-netlify-cms-starter-kit.svg)](https://github.com/jbratcher/nuxt-netlify-cms-starter-kit/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+---
+
+<p align="center">Quickly bootstrap your new blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS.
 
 Built on top of [Nuxt Netlify CMS Starter](https://github.com/xdesro/nuxt-netlify-cms-starter)
+<br>
 
-## How to use
+</p>
 
-## Getting Started
+## 📝 Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+
+## About <a name = "about"></a>
+
+Built to reduce initial development time and get you started coding out features, Netlify Nuxt CMS Starter Kit pre-configures Nuxt to generate a blazing-ly fast static site. Netlify CMS gives you the ability to easily create and manage not only blog posts but any custom resources you create. On top of all that, you can use the [one click deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/jbratcher/nuxt-netlify-cms-starter-kit) to for live hosting at no cost.
+
+## Getting Started <a name = "getting_started"></a>
+
+### Prerequisites
+
+You will need to have Node and npm installed.
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Deployment is dead simple using Netlify. Just one click for initial deployment and automatic deploys when you push new changes to Github.
 
 The quickest way to get started is with Netlify's hyper-convenient **one-click Deploy To Netlify**, which will automatically create an instance of this project on your GitHub account and deploy it instantly to Netlify.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
 
-Otherwise, you can follow these steps!
+For local development:
 
 1. Clone the repository locally and cd into the directory.
 
 ```bash
 git clone https://github.com/jbratcher/nuxt-netlify-cms-starter-kit
 
-cd nuxt-netlify-cms-starter
+cd nuxt-netlify-cms-starter-kit
 ```
 
 2. Install dependencies.
@@ -49,7 +84,7 @@ yarn generate
 
 > This project was bootstrapped with `create-nuxt-app`. There are more detailed explanations of how everything works in the [Nuxt.js docs](https://nuxtjs.org).
 
-## Activating Netlify CMS
+## Netlify CMS
 
 This project comes with Netlify CMS ready to rumble, and a basic blog configuration. To use Netlify CMS:
 
@@ -67,10 +102,14 @@ This project comes with Netlify CMS ready to rumble, and a basic blog configurat
 2. Enter the Netlify URL of your site when prompted.
 3. Login with the account you created or one of the external providers, if you enabled them.
 
-#### To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console.
+> To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console.
 
 ### Use Netlify CMS Dashboard
 
 1. In your browser, navigate to `localhost:3000/admin`.
-2. Login 
+2. Login
 3. From the dashboard, you can create, edit, and delete resources and resource types.
+
+### Start Creating
+
+At this point you should be able to start customizing the application to your requirements.

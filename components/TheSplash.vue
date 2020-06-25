@@ -7,24 +7,18 @@
       dark
       :src="imageSource"
       lazy-src="https://picsum.photos/id/0/10/6"
-      :height="$breakpoint.mdAndUp ? '525' : '480'"
+      :height="$breakpoint.mdAndUp ? '525' : '400'"
     >
       <v-row align="center" justify="center">
         <v-col class="text-center pb-6 px-6" cols="12">
           <h1
-            :class="{
-              'display-2 mb-12': $breakpoint.mdAndUp,
-              'display-1 mb-2': $breakpoint.smAndDown
-            }"
+            :class="$breakpoint.mdAndUp ? 'display-1 mb-12' : 'display-1 mb-2'"
           >
             {{ headerText }}
           </h1>
           <p
             class="mb-12"
-            :class="{
-              headline: $breakpoint.mdAndUp,
-              'subtitle-1': $breakpoint.smAndDown
-            }"
+            :class="$breakpoint.mdAndUp ? 'title' : 'subtitle-1'"
           >
             {{ subText }}
           </p>
@@ -36,22 +30,22 @@
 
 <script>
 export default {
-  name: 'TheSplash',
+  name: "TheSplash",
   props: {
     imageSource: {
       type: String,
-      default: ''
+      default: "",
     },
     headerText: {
       type: String,
-      default: ''
+      default: "",
     },
     subText: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: "",
+    },
+  },
+};
 </script>
 
 <style lang="scss">
