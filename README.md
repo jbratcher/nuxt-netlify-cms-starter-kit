@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/8gc22na.png" alt="Project logo"></a>
+ <img width=200px height=200px src="https://i.imgur.com/D7cl5kX.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Nuxt Netlify CMS Starter</h3>
@@ -16,9 +16,9 @@
 
 ---
 
-<p align="center">Quickly bootstrap your new blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS.
+<p align="center">An opinionated starter project for Nuxt, Vuetify, and Netlify CMS.
 
-Built on top of [Nuxt Netlify CMS Starter](https://github.com/xdesro/nuxt-netlify-cms-starter)
+Quickly bootstrap your new blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS. One click Netlify deployment.
 <br>
 
 </p>
@@ -31,13 +31,23 @@ Built on top of [Nuxt Netlify CMS Starter](https://github.com/xdesro/nuxt-netlif
 
 ## About <a name = "about"></a>
 
-Built to reduce initial development time and get you started coding out features, Netlify Nuxt CMS Starter Kit pre-configures Nuxt to generate a blazing-ly fast static site. Netlify CMS gives you the ability to easily create and manage not only blog posts but any custom resources you create. On top of all that, you can use the [one click deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/jbratcher/nuxt-netlify-cms-starter-kit) to for live hosting at no cost.
+This starter project was designed to bootstrap the development of a modern, headless CMS blog or static website. Using the power of Nuxt, you get a Vue application that is pre-configured to maximizing performance and SEO opportunities out of the box.
 
-## Getting Started <a name = "getting_started"></a>
+Vuetify is used for the UI library and this project features responsive fonts, theme caching, a global breakpoint fix and much more.
 
-### Prerequisites
+Netlify CMS is used for content management so you can easily create and manage blog posts and other resources while integrating them into your git workflow.
+
+This project is also set to work with Netlify which offers a free starter plan for hosting personal projects, hobby sites, and experiments for free.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
+
+Built on top of [Nuxt Netlify CMS Starter](https://github.com/xdesro/nuxt-netlify-cms-starter)
+
+## Prerequisites
 
 You will need to have Node and npm installed.
+
+## Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Deployment is dead simple using Netlify. Just one click for initial deployment and automatic deploys when you push new changes to Github.
 
