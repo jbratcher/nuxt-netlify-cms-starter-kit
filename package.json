@@ -9,7 +9,8 @@
     "build": "nuxt build --target static",
     "start": "nuxt start",
     "export": "nuxt export",
-    "serve": "nuxt serve"
+    "serve": "nuxt serve",
+    "static": "npm run build && npm run export"
   },
   "repository": {
     "type": "git",
