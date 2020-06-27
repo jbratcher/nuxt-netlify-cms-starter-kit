@@ -81,7 +81,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/global.scss"],
+  css: ["~/assets/global.scss", "highlight.js/styles/a11y-light.css"],
   /*
    ** Plugins to load before mounting the App
    */
@@ -97,9 +97,23 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/markdownit", "nuxt-webfontloader"],
+  modules: ["@nuxtjs/markdownit", "@nuxtjs/pwa", "nuxt-webfontloader"],
   markdownit: {
+    breaks: true,
+    // use syntax highlighting:
+    highlight: function(str, lang) {
+      const hljs = require("highlight.js");
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(lang, str).value;
+        } catch (__) {}
+      }
+
+      return ""; // use external default escaping
+    },
+    html: true,
     injected: true,
+    linkify: true,
   },
   /*
    ** Build configuration

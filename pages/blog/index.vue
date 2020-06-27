@@ -4,7 +4,7 @@
       <!-- Hero Section -->
       <TheSplash
         headerText="Blog"
-        imageSource="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        imageSource="/images/vbanner.jpg"
         subText="Thoughts on Nuxt &amp; Netlify CMS"
       />
 
@@ -24,7 +24,7 @@
               :tile="$breakpoint.smAndDown"
             >
               <v-img
-                src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+                src="/images/vbanner.jpg"
                 lazy-src="https://lorempixel.com/400/200"
                 max-height="200px"
               />

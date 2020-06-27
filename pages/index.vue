@@ -9,7 +9,7 @@
           buttonTo="about"
           dark
           headerText="Nuxt Netlify CMS Starter Kit"
-          imageSource="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+          imageSource="/images/vbanner.jpg"
           subText="Quickly spin up a static site using Nuxt with Netlify CMS.
                   Push to deploy on Netlify."
         />

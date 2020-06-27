@@ -5,7 +5,7 @@
         <!-- Hero Section -->
         <TheSplash
           :headerText="blogPost.title"
-          imageSource="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+          imageSource="/images/vbanner.jpg"
           :subText="blogPost.description"
         />
 
