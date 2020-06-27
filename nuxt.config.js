@@ -7,9 +7,19 @@ const title = strUtil.titleCase(
 );
 
 export default {
+  /*
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
   mode: "universal",
   /*
+   ** full static build
+   ** https://nuxtjs.org/blog/going-full-static
+   */
+  target: "static",
+  /*
    ** env variables used in vue components
+   https://nuxtjs.org/api/configuration-env
    */
   env: {
     title: title || "",

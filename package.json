@@ -8,7 +8,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "export": "nuxt export",
+    "serve": "nuxt serve"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,9 @@
   "dependencies": {
     "@mdi/js": "^5.3.45",
     "@nuxtjs/markdownit": "^1.2.6",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/vuetify": "^1.9.0",
-    "nuxt": "^2.12.0",
+    "nuxt": "^2.13.0",
     "nuxt-webfontloader": "^1.1.0"
   },
   "devDependencies": {
