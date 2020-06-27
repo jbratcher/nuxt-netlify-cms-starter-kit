@@ -23,7 +23,7 @@ Quickly bootstrap your new blog, CMS, or static site using the power of Nuxt and
 
 </p>
 
-## 📝 Table of Contents
+## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
