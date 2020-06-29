@@ -23,6 +23,7 @@
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click.stop="drawer = !drawer"
+        aria-label="menuopen"
         name="menuopen"
         x-large
       >
@@ -47,9 +48,9 @@
       <MenuLinks :general-links="generalLinks" list-class="mobile" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
-    <v-content class="pa-0">
+    <v-main class="pa-0">
       <nuxt />
-    </v-content>
+    </v-main>
     <!-- Footer Area -->
     <v-footer class="d-flex flex-column align-center py-6">
       <h2 class="mb-3" :class="$breakpoint.mdAndUp ? 'display-1' : 'headline'">

@@ -81,7 +81,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/global.scss", "highlight.js/styles/a11y-light.css"],
+  css: [
+    "~/assets/global.scss",
+    { src: "~/node_modules/highlight.js/styles/a11y-light.css", lang: "css" },
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -93,27 +96,27 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/vuetify"],
+  buildModules: [
+    "@aceforth/nuxt-optimized-images",
+    "@nuxtjs/pwa",
+    "@nuxtjs/vuetify",
+  ],
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/markdownit", "@nuxtjs/pwa", "nuxt-webfontloader"],
+  modules: ["@nuxtjs/markdownit", "nuxt-webfontloader"],
   markdownit: {
     breaks: true,
-    // use syntax highlighting:
-    highlight: function(str, lang) {
-      const hljs = require("highlight.js");
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return hljs.highlight(lang, str).value;
-        } catch (__) {}
-      }
-
-      return ""; // use external default escaping
-    },
     html: true,
     injected: true,
     linkify: true,
+  },
+  /*
+   ** Nuxt Optimized Images Config
+   ** https://github.com/aceforth/nuxt-optimized-images
+   */
+  optimizedImages: {
+    optimizeImages: true,
   },
   /*
    ** Build configuration

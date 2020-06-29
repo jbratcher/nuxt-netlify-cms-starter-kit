@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
-    "static": "npm run build && npm run export"
+    "static": "npm run build && npm run export",
+    "webpack-defaults": "webpack-defaults"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,19 @@
   "license": "MIT",
   "dependencies": {
     "@mdi/js": "^5.3.45",
-    "@nuxtjs/markdownit": "^1.2.6",
-    "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "@nuxtjs/vuetify": "^1.9.0",
+    "@nuxtjs/markdownit": "^1.2.9",
     "nuxt": "^2.13.0",
     "nuxt-webfontloader": "^1.1.0"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.0.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-svgo": "^8.0.0",
     "node-sass": "^4.14.1",
+    "nuxt-purgecss": "^1.0.0",
     "sass-loader": "^8.0.2"
   }
 }

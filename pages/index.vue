@@ -53,6 +53,7 @@
                         <v-btn
                           class="mt-6 mb-3 pl-12"
                           :href="card.link"
+                          :aria-label="card.title"
                           :name="card.title"
                           text
                           width="6rem"
