@@ -61,6 +61,30 @@ export default {
       },
     ],
   },
+  /*
+   ** PWA configuration
+   ** https://pwa.nuxtjs.org
+   */
+  pwa: {
+    manifest: {
+      icons: [
+        {
+          src: "/images/pwa-install.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/images/pwa-splash.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
+    },
+  },
+  /*
+   ** Configure the generation of your universal web application to a static web application
+   ** https://nuxtjs.org/api/configuration-generate/
+   */
   generate: {
     fallback: true,
   },
