@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://i.imgur.com/D7cl5kX.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Nuxt Netlify CMS Starter</h3>
+<h3 align="center">Nuxt Netlify CMS Starter Kit</h3>
 
 <div align="center">
 
@@ -18,7 +18,7 @@
 
 <p align="center">An opinionated starter project for Nuxt, Vuetify, and Netlify CMS.
 
-Quickly bootstrap your new blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS. One click Netlify deployment.
+Quickly bootstrap a blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS. One click Netlify deployment. Optimized for performance.
 <br>
 
 </p>
@@ -42,6 +42,14 @@ This project is also set to work with Netlify which offers a free starter plan f
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
 
 Built on top of [Nuxt Netlify CMS Starter](https://github.com/xdesro/nuxt-netlify-cms-starter)
+
+Other features:
+
+- Vuex store and modules
+- Docker support
+- Vuetify breakpoint fix
+- Vuetify theme caching for performance
+- Custom scroll directive for main nav
 
 ## Prerequisites
 
