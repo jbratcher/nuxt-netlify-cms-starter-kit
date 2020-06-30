@@ -27,6 +27,7 @@ export default {
   },
   /*
    ** Headers of the page
+   ** meta: Vue meta for SEO
    */
   head: {
     htmlAttrs: {
@@ -61,15 +62,6 @@ export default {
     ],
   },
   generate: {
-    routes: function() {
-      const fs = require("fs");
-      return fs.readdirSync("./assets/content/blog").map((file) => {
-        return {
-          route: `/blog/${file.slice(2, -5)}`,
-          payload: require(`./assets/content/blog/${file}`),
-        };
-      });
-    },
     fallback: true,
   },
   /*
