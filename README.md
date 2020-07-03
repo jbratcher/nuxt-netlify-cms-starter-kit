@@ -16,9 +16,9 @@
 
 ---
 
-<p align="center">An opinionated starter project for Nuxt, Vuetify, and Netlify CMS.
+<p align="center">A fully configured PWA for Nuxt and Netlify CMS application development.
 
-Quickly bootstrap a blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS. One click Netlify deployment. Optimized for performance.
+Quickly bootstrap a blog, CMS, or static site using the power of Nuxt and the headless CMS, Netlify CMS. Development amplified using the Vuetify UI library. One click Netlify deployment. Optimized for performance. Production ready.
 <br>
 
 </p>
@@ -31,7 +31,7 @@ Quickly bootstrap a blog, CMS, or static site using the power of Nuxt and the he
 
 ## About <a name = "about"></a>
 
-This starter project was designed to bootstrap the development of a modern, headless CMS blog or static website. Using the power of Nuxt, you get a Vue application that is pre-configured to maximizing performance and SEO opportunities out of the box.
+This starter project was designed to bootstrap the development of a modern, headless CMS blog or static website. Using the power of Nuxt, you get a PWA that is pre-configured to maximize performance and SEO opportunities out of the box.
 
 Vuetify is used for the UI library and this project features responsive fonts, theme caching, a global breakpoint fix and much more.
 
@@ -100,7 +100,19 @@ yarn start
 yarn generate
 ```
 
-> This project was bootstrapped with `create-nuxt-app`. There are more detailed explanations of how everything works in the [Nuxt.js docs](https://nuxtjs.org).
+## Docker
+
+There is basic docker support for those who prefer to develop this way. The full usage docs are in the Dockerfile.
+
+```bash
+# Build command
+docker build -t nuxt:nginx .
+
+# Serve command
+docker run --name basic_nuxt --rm -d -p 3333:80 nuxt:nginx
+```
+
+This will serve the app on localhost:3333
 
 ## Netlify CMS
 

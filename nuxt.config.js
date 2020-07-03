@@ -80,6 +80,10 @@ export default {
         },
       ],
     },
+    workbox: {
+      clientClaims: false,
+      offlineStrategy: "NetworkFirst",
+    },
   },
   /*
    ** Configure the generation of your universal web application to a static web application
@@ -114,8 +118,9 @@ export default {
    */
   buildModules: [
     "@aceforth/nuxt-optimized-images",
-    "@nuxtjs/pwa",
+    "nuxt-purgecss",
     "@nuxtjs/vuetify",
+    "@nuxtjs/pwa",
   ],
   /*
    ** Nuxt.js modules
@@ -149,7 +154,7 @@ export default {
   */
   webfontloader: {
     google: {
-      // Loads Open Sans font with weights 300 and 400 + display font as swap
+      // Loads Poppins + display font as swap
       families: ["Poppins&display=swap"],
     },
   },
