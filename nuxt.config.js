@@ -118,7 +118,6 @@ export default {
    */
   buildModules: [
     "@aceforth/nuxt-optimized-images",
-    "nuxt-purgecss",
     "@nuxtjs/vuetify",
     "@nuxtjs/pwa",
   ],
