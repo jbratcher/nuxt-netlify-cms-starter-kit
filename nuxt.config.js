@@ -152,9 +152,10 @@ export default {
   // handles efficient loading of web fonts
   */
   webfontloader: {
-    google: {
-      // Loads Poppins + display font as swap
-      families: ["Poppins&display=swap"],
+    // use custom instead of google property to prevent flash of invisible text(foit)
+    custom: {
+      families: ["Poppins"],
+      urls: ["https://fonts.googleapis.com/css?family=Poppins&display=swap"],
     },
   },
   /*
